@@ -7,7 +7,7 @@ request({url, json:true},(error,{body})=>{
         }else if(body.error){
             callback("Something wrong requested",undefined)
         }else{
-            callback(undefined,"There is "+body.current.temperature+" temperature."+"There is "+body.current.precip+" chance of rain.")
+            callback(undefined,"There is "+body.current.temperature+" temperature."+"There is "+body.current.precip+"% chance of rain. There is "+body.current.humidity+"humidity.")
         }
     })
 }
