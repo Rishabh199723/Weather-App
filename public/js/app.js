@@ -7,6 +7,7 @@ const message2 = document.querySelector('#message-2')
 
 
 form.addEventListener('submit',(e)=>{
+    $("#overlay").show()
     e.preventDefault()
     message1.textContent = "Loading..."
     message2.textContent = ''
@@ -15,8 +16,10 @@ form.addEventListener('submit',(e)=>{
         response.json().then((data)=>{
             if(data.error){
                 message1.textContent = data.error
+                $("#overlay").hide()
             }
             else{
+                $("#overlay").hide()
                 message1.textContent = data.location
                 message2.textContent = data.dataForecast
             }
